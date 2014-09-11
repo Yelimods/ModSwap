@@ -1,0 +1,96 @@
+The ModSwap Project for: Farming Simulator by Giants Software
+Copyright © 2014 Yelibam at www.fs-uk.com - yelimods@mail.com
+
+ModSwap Changelog
+=================
+
+
+Version 0.5 beta - 08 September 2014
+-------------------------------------
+Features & Functions Added:
+	ModSwap Menu for starting other elements
+	Quick Mode for bypassing information-only screens
+	Archiving of Log Files, instead of deleting them
+General Work:
+	All files now reside in ModSwap sub-folder
+	Re-ordered logic and streamlined code
+	Added User Manual
+	Added Creative Commons License
+	Added Copyright statement
+	Added copyright information to all files
+
+	
+Version 0.4 alpha - 02 September 2014
+-------------------------------------
+Features & Functions Added:
+	Logging to record actions in separate log file
+	Diagnostic exit codes, recorded in log file
+Validation & Error Checking:
+	Validation that two or more Mod Groups were created in Builder
+	Validation that two or more Mod Groups were found in Switcher
+	Validation that correct Mod Group folders were found in Switcher
+General Work:
+	Further improvements to coding and general readability
+
+
+Version 0.3 alpha - 31 August 2014
+----------------------------------
+Features & Functions Added:
+	Increased maximum Mod Group slots to 10
+	Function to backup current mods folder
+	Function to set first choice of Mod Group as current mods folder
+	Function to allow user to check that existing Mod Groups are correct
+Validation & Error Checking:
+	Validation to ensure that log file exists
+	Validation to ensure that data file exists, and that the data is valid
+	Validation to ensure that selected next Mod Group is valid
+	Coding to remove special characters from Mod Group names
+General Work:
+	Added user instructions throughout program
+	Improved on-screen display of program
+
+
+Version 0.2 alpha - 28 August 2014
+----------------------------------
+Features & Functions Added:
+	Set maximum Mod Group slots to 9
+	Function to record list of Mod Groups from user input in Builder
+	Function to save Mod Group names in separate data file
+	Function to create the new Mod Group folders
+	Function to read Mod Group names from data file in Switcher
+Validation & Error Checking:
+	Coding to filter out unused Mod Group name slots
+General Work:
+	Tidied up coding and general readability
+Other:
+	Project named as 'ModSwap'
+	Created separate 'Builder' program
+	Main program renamed 'Switcher'
+
+
+Version 0.1 alpha - 19 July 2014
+--------------------------------
+Features & Functions:
+	Developed for private use only
+	Detects and informs user of current mods folder
+	Enables user to select next mods folder
+	Function to switch folders
+	The folders have to be created manually
+	The folder names have to be hard-coded into the program
+
+To Do:
+--------------------------------
+	Validation of duplicate Mod Group names entered
+	further validation for incompatible symbols
+	validation that folders were created correctly
+
+Possible new features to come:
+--------------------------------
+	Default Mod Groups
+	Create 'Cleared' folder automatically
+	Recognise and backup all existing mods folders containing 'mods'
+	Recognise existing Mod Group folders and modify or add
+	Count mods in each folder
+	List mods in each folder
+	Copy selected mods to folders
+	One-click clear mods, pdlc, log
