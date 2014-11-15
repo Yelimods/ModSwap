@@ -17,12 +17,14 @@ set msLog=%msRoot%\ModSwapLog.dat
 set msData=%msRoot%\ModSwapData.dat
 set msSettings=%msRoot%\ModSwapSettings.dat
 cd %msParent%
-rem exit codes are E010 to E095
 if %msQuick%==1 goto quick01
 rem =============================================================================
-rem Page 1 - Introduction
+rem Introduction
 rem =============================================================================
+rem exit codes are E010 to E095
 cls
+echo -- ModSwap v%msVer% - Menu --
+echo.
 echo.
 echo          ##########################################
 echo          #                                        #
@@ -33,8 +35,6 @@ echo          #    www.fs-uk.com - yelimods@mail.com   #
 echo          #                                        #
 echo          #       for Farming Simulator 2013       #
 echo          #               by Giants                #
-echo          #                                        #
-echo          #              version %msVer%               #
 echo          #                                        #
 echo          ##########################################
 echo.
@@ -57,10 +57,10 @@ rem echo oLink.Save >> CreateShortcut.vbs
 rem cscript CreateShortcut.vbs
 rem rem del CreateShortcut.vbs
 rem =============================================================================
-rem Page 2 - Initialise log file
+rem Initialise log file
 rem =============================================================================
 cls
-echo -- ModSwap Menu v%msVer% --
+echo -- ModSwap v%msVer% - Menu --
 echo.
 echo.
 echo ModSwap will create a log of the changes it makes.
@@ -92,12 +92,14 @@ echo %date% %time% - ModSwapMenu - Menu Opened>> %msLog%
 echo %date% %time% - ModSwapMenu - Menu version %msVer%>> %msLog%
 if %msQuick% equ 1 echo %date% %time% - ModSwapMenu - Quick Mode is On>> %msLog%
 rem =============================================================================
-rem Page 3 - Ready to start?
+rem Ready to start?
 rem =============================================================================
 :goSelect
 cls
-echo -- ModSwap Menu v%msVer% --
+echo -- ModSwap v%msVer% - Menu --
 echo.
+echo.
+echo -- Main Menu --
 echo.
 echo Please select from the choices below.
 echo.
@@ -106,7 +108,6 @@ echo  2 Run ModSwap Switcher
 echo  3 Settings
 echo  4 Exit
 echo.
-rem choice /C 1234 /N /M "(1) (2) (3) (4)"
 choice /C 1234 /N
 if errorlevel 4 echo %date% %time% - ModSwapMenu - Menu Closed E010>> %msLog% & exit
 if errorlevel 3 goto settings
@@ -121,17 +122,24 @@ rem ============================================================================
 :settings
 echo %date% %time% - ModSwapMenu - Settings Opened>> %msLog%
 cls
-echo -- ModSwap Menu v%msVer% --
+echo -- ModSwap v%msVer% - Menu --
 echo.
 echo.
-echo Quick Mode will bypass the help and information screens throughout ModSwap.
-echo Use this only when you are familiar with the operation of ModSwap.
+echo -- Settings Menu --
 echo.
-echo Do you wish to use Quick Mode?
+if %msQuick% equ 0 echo Quick Mode is Off.
+if %msQuick% equ 1 echo Quick Mode is On.
 echo.
-choice /C YN /N /M "(Y)es (N)o"
-if errorlevel 2 set msQuick=0 & echo Quick mode is now Off & echo %date% %time% - ModSwapMenu - Quick Mode switched Off>> %msLog%
-if errorlevel 1 set msQuick=1 & echo Quick mode is now On & echo %date% %time% - ModSwapMenu - Quick Mode switched On>> %msLog%
+echo Please select from the choices below.
+echo.
+echo  1 Standard Mode: all screens shown
+echo  2 Quick Mode: bypass help and information screens throughout ModSwap
+echo.
+echo Use Quick Mode only when you are familiar with the operation of ModSwap.
+echo.
+choice /C 12 /N
+if errorlevel 2 set msQuick=1 & echo Quick mode is now On & echo %date% %time% - ModSwapMenu - Quick Mode switched On>> %msLog%
+if errorlevel 1 set msQuick=0 & echo Quick mode is now Off & echo %date% %time% - ModSwapMenu - Quick Mode switched Off>> %msLog%
 (
 echo %msVer%
 echo %msQuick%

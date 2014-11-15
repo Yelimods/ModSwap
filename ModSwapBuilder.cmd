@@ -17,12 +17,14 @@ set msLog=%msRoot%\ModSwapLog.dat
 set msData=%msRoot%\ModSwapData.dat
 set msSettings=%msRoot%\ModSwapSettings.dat
 cd %msParent%
-rem exit codes are E110 to E195
 if %msQuick%==1 goto quick01
 rem =============================================================================
 rem Introduction
 rem =============================================================================
+rem exit codes are E110 to E195
 cls
+echo -- ModSwap v%msVer% - Builder --
+echo.
 echo.
 echo          ##########################################
 echo          #                                        #
@@ -33,8 +35,6 @@ echo          #    www.fs-uk.com - yelimods@mail.com   #
 echo          #                                        #
 echo          #       for Farming Simulator 2013       #
 echo          #               by Giants                #
-echo          #                                        #
-echo          #              version %msVer%               #
 echo          #                                        #
 echo          ##########################################
 echo.
@@ -50,7 +50,7 @@ rem Check for log file; create if none & initialise
 rem =============================================================================
 if exist %msLog% goto oldlog
 cls
-echo -- ModSwap Builder v%msVer% --
+echo -- ModSwap v%msVer% - Builder --
 echo.
 echo.
 echo ModSwap log file not found.
@@ -66,13 +66,12 @@ pause
 echo.>> %msLog%
 echo %date% %time% - ModSwapBuilder - Builder Opened>> %msLog%
 echo %date% %time% - ModSwapBuilder - Builder version %msVer%>> %msLog%
-if %msQuick% equ 1 echo %date% %time% - ModSwapBuilder - Quick Mode is On>> %msLog%
-if %msQuick%==1 goto quick02
+if %msQuick% equ 1 echo %date% %time% - ModSwapBuilder - Quick Mode is On>> %msLog% & goto quick02
 rem =============================================================================
 rem Ready to start?
 rem =============================================================================
 cls
-echo -- ModSwap Builder v%msVer% --
+echo -- ModSwap v%msVer% - Builder --
 echo.
 echo.
 echo You can create up to ten Mod Groups with this program.
@@ -97,7 +96,7 @@ rem ============================================================================
 rem Enter Mod Groups
 rem =============================================================================
 cls
-echo -- ModSwap Builder v%msVer% --
+echo -- ModSwap v%msVer% - Builder --
 echo.
 rem add validation to check for duplicate group names
 rem add further validation for incompatible symbols
@@ -185,10 +184,10 @@ set msGroup0=%msGroup0:"=%
 if not %msGroup0%==unused set /a msGroupCount+=1
 echo %date% %time% - ModSwapBuilder - Defined Mod Group 0 %msGroup0%>> %msLog%
 rem =============================================================================
-rem Page 5 - Check Mod Groups are correct
+rem Check Mod Groups are correct
 rem =============================================================================
 cls
-echo -- ModSwap Builder v%msVer% --
+echo -- ModSwap v%msVer% - Builder --
 echo.
 echo.
 echo Your chosen Mod Groups are as follows:
@@ -203,13 +202,9 @@ echo  %msGroup7%
 echo  %msGroup8%
 echo  %msGroup9%
 echo  %msGroup0%
-rem =============================================================================
-rem No Mod Groups
-rem =============================================================================
+rem No Mod Groups defined
 if %msGroupCount% equ 0 goto noGroup
-rem =============================================================================
-rem Only one Mod Group
-rem =============================================================================
+rem Only one Mod Group defined
 if %msGroupCount% equ 1 goto oneGroup
 rem =============================================================================
 rem Confirm Mod Groups
@@ -221,7 +216,7 @@ echo.
 choice /C YN /N /M "(Y)es or (N)o"
 if errorlevel 2 echo %date% %time% - ModSwapBuilder - Mod Group entry aborted>> %msLog% & goto quick02
 cls
-echo -- ModSwap Builder v%msVer% --
+echo -- ModSwap v%msVer% - Builder --
 rem =============================================================================
 rem Save list of Mod Groups to file, stripping off unused group slots
 rem =============================================================================
@@ -250,7 +245,7 @@ echo Next your new Mod Group folders will be created.
 echo.
 pause
 cls
-echo -- ModSwap Builder v%msVer% --
+echo -- ModSwap v%msVer% - Builder --
 :quick02
 rem =============================================================================
 rem Back up original mods folder and create new folders for Mod Groups
@@ -323,7 +318,7 @@ ren _mods_%msGroup1% mods
 echo %date% %time% - ModSwapBuilder - Mod Group folder _mods_%msGroup1% set as current mods folder>> %msLog%
 rem add validation that folders were created
 rem =============================================================================
-rem Page 7 - Summary
+rem Summary
 rem =============================================================================
 echo.
 echo.
@@ -347,12 +342,17 @@ echo.
 echo ModSwap Builder will now close.
 echo.
 echo %date% %time% - ModSwapBuilder - Builder Completed>> %msLog%
+if %msQuick%==1  timeout 3 & goto quickExit
 pause
+:quickExit
 echo %date% %time% - ModSwapBuilder - Builder Closed E190>> %msLog% & exit
 rem #########
 rem Exit E190
 rem #########
 :noGroup
+rem =============================================================================
+rem No Mod Groups defined
+rem =============================================================================
 echo %date% %time% - ModSwapBuilder - Validation: %msGroupCount% Mod Groups defined>> %msLog%
 echo.
 echo No Mod Groups were found.
@@ -367,6 +367,9 @@ rem #########
 rem Exit E130
 rem #########
 :oneGroup
+rem =============================================================================
+rem Only one Mod Group defined
+rem =============================================================================
 echo %date% %time% - ModSwapBuilder - Validation: %msGroupCount% Mod Group defined>> %msLog%
 echo.
 echo Only one Mod Group was found.
