@@ -2,7 +2,7 @@
 color 71
 rem      ########################################################################
 rem      #    The ModSwap Project for:  Farming Simulator by Giants Software    #
-rem      #         © 2014 Yelibam at www.fs-uk.com - yelimods@mail.com          #
+rem      #         © 2015 Yelibam at www.fs-uk.com - yelimods@mail.com          #
 rem      ########################################################################
 rem =============================================================================
 rem Initialise variables and settings
@@ -30,10 +30,10 @@ echo          ##########################################
 echo          #                                        #
 echo          #            ModSwap Switcher            #
 echo          #                                        #
-echo          #       Copyright (c) 2014 Yelibam       #
+echo          #       Copyright (c) 2015 Yelibam       #
 echo          #    www.fs-uk.com - yelimods@mail.com   #
 echo          #                                        #
-echo          #       for Farming Simulator 2013       #
+echo          #    for Farming Simulator 2013 and 15   #
 echo          #               by Giants                #
 echo          #                                        #
 echo          ##########################################
@@ -57,7 +57,7 @@ echo ModSwap log file not found.
 echo %date% %time% - ModSwapSwitcher - Log file not found> %msLog%
 echo %date% %time% - ModSwapSwitcher - New log file Started>> %msLog%
 echo %date% %time% - ModSwapSwitcher - The ModSwap Project for: Farming Simulator by Giants Software>> %msLog%
-echo %date% %time% - ModSwapSwitcher - © 2014 Yelibam at www.fs-uk.com - yelimods@mail.com>> %msLog%
+echo %date% %time% - ModSwapSwitcher - © 2015 Yelibam at www.fs-uk.com - yelimods@mail.com>> %msLog%
 echo.
 echo New log file started: ModSwapLog.dat
 echo.
@@ -76,82 +76,142 @@ rem Extract Mod Groups from file
 rem =============================================================================
 cls
 echo -- ModSwap Switcher v%msVer% --
-set msGroup1=unused
-set msGroup2=unused
-set msGroup3=unused
-set msGroup4=unused
-set msGroup5=unused
-set msGroup6=unused
-set msGroup7=unused
-set msGroup8=unused
-set msGroup9=unused
-set msGroup0=unused
+set msGroup01=unused
+set msGroup02=unused
+set msGroup03=unused
+set msGroup04=unused
+set msGroup05=unused
+set msGroup06=unused
+set msGroup07=unused
+set msGroup08=unused
+set msGroup09=unused
+set msGroup10=unused
+set msGroup11=unused
+set msGroup12=unused
+set msGroup13=unused
+set msGroup14=unused
+set msGroup15=unused
+set msGroup16=unused
+set msGroup17=unused
+set msGroup18=unused
+set msGroup19=unused
+set msGroup20=unused
 (
-set /p msGroup1=
-set /p msGroup2=
-set /p msGroup3=
-set /p msGroup4=
-set /p msGroup5=
-set /p msGroup6=
-set /p msGroup7=
-set /p msGroup8=
-set /p msGroup9=
-set /p msGroup0=
+set /p msGroup01=
+set /p msGroup02=
+set /p msGroup03=
+set /p msGroup04=
+set /p msGroup05=
+set /p msGroup06=
+set /p msGroup07=
+set /p msGroup08=
+set /p msGroup09=
+set /p msGroup10=
+set /p msGroup11=
+set /p msGroup12=
+set /p msGroup13=
+set /p msGroup14=
+set /p msGroup15=
+set /p msGroup16=
+set /p msGroup17=
+set /p msGroup18=
+set /p msGroup19=
+set /p msGroup20=
 )<%msData%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 1 %msGroup1%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 2 %msGroup2%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 3 %msGroup3%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 4 %msGroup4%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 5 %msGroup5%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 6 %msGroup6%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 7 %msGroup7%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 8 %msGroup8%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 9 %msGroup9%>> %msLog%
-echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 0 %msGroup0%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 1 %msGroup01%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 2 %msGroup02%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 3 %msGroup03%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 4 %msGroup04%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 5 %msGroup05%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 6 %msGroup06%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 7 %msGroup07%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 8 %msGroup08%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 9 %msGroup09%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 10 %msGroup10%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 11 %msGroup11%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 12 %msGroup12%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 13 %msGroup13%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 14 %msGroup14%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 15 %msGroup15%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 16 %msGroup16%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 17 %msGroup17%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 18 %msGroup18%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 19 %msGroup19%>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Initialise Mod Group 20 %msGroup20%>> %msLog%
 rem =============================================================================
 rem Count Mod Groups
 rem =============================================================================
 set /a msGroupCount=0
-if not %msGroup1%==unused set /a msGroupCount+=1
-if not %msGroup2%==unused set /a msGroupCount+=1
-if not %msGroup3%==unused set /a msGroupCount+=1
-if not %msGroup4%==unused set /a msGroupCount+=1
-if not %msGroup5%==unused set /a msGroupCount+=1
-if not %msGroup6%==unused set /a msGroupCount+=1
-if not %msGroup7%==unused set /a msGroupCount+=1
-if not %msGroup8%==unused set /a msGroupCount+=1
-if not %msGroup9%==unused set /a msGroupCount+=1
-if not %msGroup0%==unused set /a msGroupCount+=1
+if not %msGroup01%==unused set /a msGroupCount+=1
+if not %msGroup02%==unused set /a msGroupCount+=1
+if not %msGroup03%==unused set /a msGroupCount+=1
+if not %msGroup04%==unused set /a msGroupCount+=1
+if not %msGroup05%==unused set /a msGroupCount+=1
+if not %msGroup06%==unused set /a msGroupCount+=1
+if not %msGroup07%==unused set /a msGroupCount+=1
+if not %msGroup08%==unused set /a msGroupCount+=1
+if not %msGroup09%==unused set /a msGroupCount+=1
+if not %msGroup10%==unused set /a msGroupCount+=1
+if not %msGroup11%==unused set /a msGroupCount+=1
+if not %msGroup12%==unused set /a msGroupCount+=1
+if not %msGroup13%==unused set /a msGroupCount+=1
+if not %msGroup14%==unused set /a msGroupCount+=1
+if not %msGroup15%==unused set /a msGroupCount+=1
+if not %msGroup16%==unused set /a msGroupCount+=1
+if not %msGroup17%==unused set /a msGroupCount+=1
+if not %msGroup18%==unused set /a msGroupCount+=1
+if not %msGroup19%==unused set /a msGroupCount+=1
+if not %msGroup20%==unused set /a msGroupCount+=1
 echo %date% %time% - ModSwapSwitcher - Mod Group names found: %msGroupCount% Mod Groups>> %msLog%
 rem =============================================================================
 rem Check for missing Mod Group folders
 rem =============================================================================
 set /a msFolderCount=1
-if exist _mods_%msGroup1% set /a msFolderCount+=1
-if exist _mods_%msGroup2% set /a msFolderCount+=1
-if exist _mods_%msGroup3% set /a msFolderCount+=1
-if exist _mods_%msGroup4% set /a msFolderCount+=1
-if exist _mods_%msGroup5% set /a msFolderCount+=1
-if exist _mods_%msGroup6% set /a msFolderCount+=1
-if exist _mods_%msGroup7% set /a msFolderCount+=1
-if exist _mods_%msGroup8% set /a msFolderCount+=1
-if exist _mods_%msGroup9% set /a msFolderCount+=1
-if exist _mods_%msGroup0% set /a msFolderCount+=1
+if exist _mods_%msGroup01% set /a msFolderCount+=1
+if exist _mods_%msGroup02% set /a msFolderCount+=1
+if exist _mods_%msGroup03% set /a msFolderCount+=1
+if exist _mods_%msGroup04% set /a msFolderCount+=1
+if exist _mods_%msGroup05% set /a msFolderCount+=1
+if exist _mods_%msGroup06% set /a msFolderCount+=1
+if exist _mods_%msGroup07% set /a msFolderCount+=1
+if exist _mods_%msGroup08% set /a msFolderCount+=1
+if exist _mods_%msGroup09% set /a msFolderCount+=1
+if exist _mods_%msGroup10% set /a msFolderCount+=1
+if exist _mods_%msGroup11% set /a msFolderCount+=1
+if exist _mods_%msGroup12% set /a msFolderCount+=1
+if exist _mods_%msGroup13% set /a msFolderCount+=1
+if exist _mods_%msGroup14% set /a msFolderCount+=1
+if exist _mods_%msGroup15% set /a msFolderCount+=1
+if exist _mods_%msGroup16% set /a msFolderCount+=1
+if exist _mods_%msGroup17% set /a msFolderCount+=1
+if exist _mods_%msGroup18% set /a msFolderCount+=1
+if exist _mods_%msGroup19% set /a msFolderCount+=1
+if exist _mods_%msGroup20% set /a msFolderCount+=1
 if not %msFolderCount% equ %msGroupCount% goto groupFolderMismatch
 echo %date% %time% - ModSwapSwitcher - Mod Group folders found: %msFolderCount% folders>> %msLog%
 rem =============================================================================
 rem Detect current Mod Group
 rem =============================================================================
-if not exist _mods_%msGroup1% set msCurrentGroup=%msGroup1% & set msCurrentFolder=_mods_%msGroup1% & goto current
-if not exist _mods_%msGroup2% set msCurrentGroup=%msGroup2% & set msCurrentFolder=_mods_%msGroup2% & goto current
-if not exist _mods_%msGroup3% set msCurrentGroup=%msGroup3% & set msCurrentFolder=_mods_%msGroup3% & goto current
-if not exist _mods_%msGroup4% set msCurrentGroup=%msGroup4% & set msCurrentFolder=_mods_%msGroup4% & goto current
-if not exist _mods_%msGroup5% set msCurrentGroup=%msGroup5% & set msCurrentFolder=_mods_%msGroup5% & goto current
-if not exist _mods_%msGroup6% set msCurrentGroup=%msGroup6% & set msCurrentFolder=_mods_%msGroup6% & goto current
-if not exist _mods_%msGroup7% set msCurrentGroup=%msGroup7% & set msCurrentFolder=_mods_%msGroup7% & goto current
-if not exist _mods_%msGroup8% set msCurrentGroup=%msGroup8% & set msCurrentFolder=_mods_%msGroup8% & goto current
-if not exist _mods_%msGroup9% set msCurrentGroup=%msGroup9% & set msCurrentFolder=_mods_%msGroup9% & goto current
-if not exist _mods_%msGroup0% set msCurrentGroup=%msGroup0% & set msCurrentFolder=_mods_%msGroup0%
+if not exist _mods_%msGroup01% set msCurrentGroup=%msGroup01% & set msCurrentFolder=_mods_%msGroup01% & goto current
+if not exist _mods_%msGroup02% set msCurrentGroup=%msGroup02% & set msCurrentFolder=_mods_%msGroup02% & goto current
+if not exist _mods_%msGroup03% set msCurrentGroup=%msGroup03% & set msCurrentFolder=_mods_%msGroup03% & goto current
+if not exist _mods_%msGroup04% set msCurrentGroup=%msGroup04% & set msCurrentFolder=_mods_%msGroup04% & goto current
+if not exist _mods_%msGroup05% set msCurrentGroup=%msGroup05% & set msCurrentFolder=_mods_%msGroup05% & goto current
+if not exist _mods_%msGroup06% set msCurrentGroup=%msGroup06% & set msCurrentFolder=_mods_%msGroup06% & goto current
+if not exist _mods_%msGroup07% set msCurrentGroup=%msGroup07% & set msCurrentFolder=_mods_%msGroup07% & goto current
+if not exist _mods_%msGroup08% set msCurrentGroup=%msGroup08% & set msCurrentFolder=_mods_%msGroup08% & goto current
+if not exist _mods_%msGroup09% set msCurrentGroup=%msGroup09% & set msCurrentFolder=_mods_%msGroup09% & goto current
+if not exist _mods_%msGroup10% set msCurrentGroup=%msGroup10% & set msCurrentFolder=_mods_%msGroup10% & goto current
+if not exist _mods_%msGroup11% set msCurrentGroup=%msGroup11% & set msCurrentFolder=_mods_%msGroup11% & goto current
+if not exist _mods_%msGroup12% set msCurrentGroup=%msGroup12% & set msCurrentFolder=_mods_%msGroup12% & goto current
+if not exist _mods_%msGroup13% set msCurrentGroup=%msGroup13% & set msCurrentFolder=_mods_%msGroup13% & goto current
+if not exist _mods_%msGroup14% set msCurrentGroup=%msGroup14% & set msCurrentFolder=_mods_%msGroup14% & goto current
+if not exist _mods_%msGroup15% set msCurrentGroup=%msGroup15% & set msCurrentFolder=_mods_%msGroup15% & goto current
+if not exist _mods_%msGroup16% set msCurrentGroup=%msGroup16% & set msCurrentFolder=_mods_%msGroup16% & goto current
+if not exist _mods_%msGroup17% set msCurrentGroup=%msGroup17% & set msCurrentFolder=_mods_%msGroup17% & goto current
+if not exist _mods_%msGroup18% set msCurrentGroup=%msGroup18% & set msCurrentFolder=_mods_%msGroup18% & goto current
+if not exist _mods_%msGroup19% set msCurrentGroup=%msGroup19% & set msCurrentFolder=_mods_%msGroup19% & goto current
+if not exist _mods_%msGroup20% set msCurrentGroup=%msGroup20% & set msCurrentFolder=_mods_%msGroup20%
 :current
 echo %date% %time% - ModSwapSwitcher - Detected current Mod Group: %msCurrentGroup%>> %msLog%
 rem =============================================================================
@@ -162,16 +222,26 @@ echo.
 echo Your Mod Groups are as follows:
 :redoNext
 echo.
-if not %msGroup1%==unused echo  1 %msGroup1%
-if not %msGroup2%==unused echo  2 %msGroup2%
-if not %msGroup3%==unused echo  3 %msGroup3%
-if not %msGroup4%==unused echo  4 %msGroup4%
-if not %msGroup5%==unused echo  5 %msGroup5%
-if not %msGroup6%==unused echo  6 %msGroup6%
-if not %msGroup7%==unused echo  7 %msGroup7%
-if not %msGroup8%==unused echo  8 %msGroup8%
-if not %msGroup9%==unused echo  9 %msGroup9%
-if not %msGroup0%==unused echo 10 %msGroup0%
+if not %msGroup01%==unused echo a %msGroup01%
+if not %msGroup02%==unused echo b %msGroup02%
+if not %msGroup03%==unused echo c %msGroup03%
+if not %msGroup04%==unused echo d %msGroup04%
+if not %msGroup05%==unused echo e %msGroup05%
+if not %msGroup06%==unused echo f %msGroup06%
+if not %msGroup07%==unused echo g %msGroup07%
+if not %msGroup08%==unused echo h %msGroup08%
+if not %msGroup09%==unused echo i %msGroup09%
+if not %msGroup10%==unused echo j %msGroup10%
+if not %msGroup11%==unused echo k %msGroup11%
+if not %msGroup12%==unused echo l %msGroup12%
+if not %msGroup13%==unused echo m %msGroup13%
+if not %msGroup14%==unused echo n %msGroup14%
+if not %msGroup15%==unused echo o %msGroup15%
+if not %msGroup16%==unused echo p %msGroup16%
+if not %msGroup17%==unused echo q %msGroup17%
+if not %msGroup18%==unused echo r %msGroup18%
+if not %msGroup19%==unused echo s %msGroup19%
+if not %msGroup20%==unused echo t %msGroup20%
 rem =============================================================================
 rem No Mod Groups defined
 rem =============================================================================
@@ -188,17 +258,27 @@ echo The current Mod Group is %msCurrentGroup%
 echo.
 echo Which Mod Group to use next:
 echo.
-choice /C 1234567890 /N /M "(1) (2) (3) (4) (5) (6) (7) (8) (9) (0)"
-if errorlevel 10 set msNextGroup=%msGroup0% & set msNextFolder=_mods_%msGroup0%
-if errorlevel 9 set msNextGroup=%msGroup9% & set msNextFolder=_mods_%msGroup9%
-if errorlevel 8 set msNextGroup=%msGroup8% & set msNextFolder=_mods_%msGroup8%
-if errorlevel 7 set msNextGroup=%msGroup7% & set msNextFolder=_mods_%msGroup7%
-if errorlevel 6 set msNextGroup=%msGroup6% & set msNextFolder=_mods_%msGroup6%
-if errorlevel 5 set msNextGroup=%msGroup5% & set msNextFolder=_mods_%msGroup5%
-if errorlevel 4 set msNextGroup=%msGroup4% & set msNextFolder=_mods_%msGroup4%
-if errorlevel 3 set msNextGroup=%msGroup3% & set msNextFolder=_mods_%msGroup3%
-if errorlevel 2 set msNextGroup=%msGroup2% & set msNextFolder=_mods_%msGroup2%
-if errorlevel 1 set msNextGroup=%msGroup1% & set msNextFolder=_mods_%msGroup1%
+choice /C abcdefghijklmnopqrst /N /M "(a) (b) (c) (d) (e) (f) (g) (h) (i) (j) (k) (l) (m) (n) (o) (p) (q) (r) (s) (t)"
+if errorlevel 20 set msNextGroup=%msGroup20% & set msNextFolder=_mods_%msGroup20%
+if errorlevel 19 set msNextGroup=%msGroup19% & set msNextFolder=_mods_%msGroup19%
+if errorlevel 18 set msNextGroup=%msGroup18% & set msNextFolder=_mods_%msGroup18%
+if errorlevel 17 set msNextGroup=%msGroup17% & set msNextFolder=_mods_%msGroup17%
+if errorlevel 16 set msNextGroup=%msGroup16% & set msNextFolder=_mods_%msGroup16%
+if errorlevel 15 set msNextGroup=%msGroup15% & set msNextFolder=_mods_%msGroup15%
+if errorlevel 14 set msNextGroup=%msGroup14% & set msNextFolder=_mods_%msGroup14%
+if errorlevel 13 set msNextGroup=%msGroup13% & set msNextFolder=_mods_%msGroup13%
+if errorlevel 12 set msNextGroup=%msGroup12% & set msNextFolder=_mods_%msGroup12%
+if errorlevel 11 set msNextGroup=%msGroup11% & set msNextFolder=_mods_%msGroup11%
+if errorlevel 10 set msNextGroup=%msGroup10% & set msNextFolder=_mods_%msGroup10%
+if errorlevel 9 set msNextGroup=%msGroup09% & set msNextFolder=_mods_%msGroup09%
+if errorlevel 8 set msNextGroup=%msGroup08% & set msNextFolder=_mods_%msGroup08%
+if errorlevel 7 set msNextGroup=%msGroup07% & set msNextFolder=_mods_%msGroup07%
+if errorlevel 6 set msNextGroup=%msGroup06% & set msNextFolder=_mods_%msGroup06%
+if errorlevel 5 set msNextGroup=%msGroup05% & set msNextFolder=_mods_%msGroup05%
+if errorlevel 4 set msNextGroup=%msGroup04% & set msNextFolder=_mods_%msGroup04%
+if errorlevel 3 set msNextGroup=%msGroup03% & set msNextFolder=_mods_%msGroup03%
+if errorlevel 2 set msNextGroup=%msGroup02% & set msNextFolder=_mods_%msGroup02%
+if errorlevel 1 set msNextGroup=%msGroup01% & set msNextFolder=_mods_%msGroup01%
 rem =============================================================================
 rem Check if unused Mod Group slot is selected
 rem =============================================================================

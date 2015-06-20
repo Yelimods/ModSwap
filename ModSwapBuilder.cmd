@@ -33,7 +33,7 @@ echo          #                                        #
 echo          #       Copyright (c) 2015 Yelibam       #
 echo          #    www.fs-uk.com - yelimods@mail.com   #
 echo          #                                        #
-echo          #     for Farming Simulator 2013 & 15    #
+echo          #    for Farming Simulator 2013 and 15   #
 echo          #               by Giants                #
 echo          #                                        #
 echo          ##########################################
