@@ -1,8 +1,18 @@
 The ModSwap Project for: Farming Simulator by Giants Software
-Copyright © 2014 Yelibam at www.fs-uk.com - yelimods@mail.com
+Copyright © 2015 Yelibam at www.fs-uk.com - yelimods@mail.com
 
 ModSwap Changelog
 =================
+
+
+Version 0.6 beta -  June 2015
+-------------------------------------
+Features & Functions Added:
+	Increased maximum Mod Group slots to 20 for FS15
+General Work:
+	Improved Settings Menu
+	Added timeout on final screen for Quick Mode
+	Removed choices for unavailable Mod Groups in Switcher.
 
 
 Version 0.5 beta - 08 September 2014
@@ -78,19 +88,3 @@ Features & Functions:
 	The folders have to be created manually
 	The folder names have to be hard-coded into the program
 
-To Do:
---------------------------------
-	Validation of duplicate Mod Group names entered
-	further validation for incompatible symbols
-	validation that folders were created correctly
-
-Possible new features to come:
---------------------------------
-	Default Mod Groups
-	Create 'Cleared' folder automatically
-	Recognise and backup all existing mods folders containing 'mods'
-	Recognise existing Mod Group folders and modify or add
-	Count mods in each folder
-	List mods in each folder
-	Copy selected mods to folders
-	One-click clear mods, pdlc, log
