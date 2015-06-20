@@ -17,13 +17,13 @@ set msLog=%msRoot%\ModSwapLog.dat
 set msData=%msRoot%\ModSwapData.dat
 set msSettings=%msRoot%\ModSwapSettings.dat
 cd %msParent%
+rem exit codes are E210 to E295
 if %msQuick%==1 goto quick01
 rem =============================================================================
 rem Introduction
 rem =============================================================================
-rem exit codes are E210 to E295
 cls
-echo -- ModSwap v%msVer% - Switcher --
+echo -- ModSwap Switcher v%msVer% --
 echo.
 echo.
 echo          ##########################################
@@ -50,7 +50,7 @@ rem Check for log file; create if none & initialise
 rem =============================================================================
 if exist %msLog% goto oldlog
 cls
-echo -- ModSwap v%msVer% - Switcher --
+echo -- ModSwap Switcher v%msVer% --
 echo.
 echo.
 echo ModSwap log file not found.
@@ -75,7 +75,7 @@ rem ============================================================================
 rem Extract Mod Groups from file
 rem =============================================================================
 cls
-echo -- ModSwap v%msVer% - Switcher --
+echo -- ModSwap Switcher v%msVer% --
 set msGroup1=unused
 set msGroup2=unused
 set msGroup3=unused
@@ -137,8 +137,8 @@ if exist _mods_%msGroup7% set /a msFolderCount+=1
 if exist _mods_%msGroup8% set /a msFolderCount+=1
 if exist _mods_%msGroup9% set /a msFolderCount+=1
 if exist _mods_%msGroup0% set /a msFolderCount+=1
-echo %date% %time% - ModSwapSwitcher - Mod Group folders found: %msFolderCount% folders>> %msLog%
 if not %msFolderCount% equ %msGroupCount% goto groupFolderMismatch
+echo %date% %time% - ModSwapSwitcher - Mod Group folders found: %msFolderCount% folders>> %msLog%
 rem =============================================================================
 rem Detect current Mod Group
 rem =============================================================================
@@ -172,9 +172,13 @@ if not %msGroup7%==unused echo  7 %msGroup7%
 if not %msGroup8%==unused echo  8 %msGroup8%
 if not %msGroup9%==unused echo  9 %msGroup9%
 if not %msGroup0%==unused echo 10 %msGroup0%
+rem =============================================================================
 rem No Mod Groups defined
+rem =============================================================================
 if %msGroupCount% equ 0 goto noGroup
+rem =============================================================================
 rem Only one Mod Group defined
+rem =============================================================================
 if %msGroupCount% equ 1 goto oneGroup
 rem =============================================================================
 rem Select next group
@@ -184,40 +188,7 @@ echo The current Mod Group is %msCurrentGroup%
 echo.
 echo Which Mod Group to use next:
 echo.
-if %msGroupCount%==2 goto choose2
-if %msGroupCount%==3 goto choose3
-if %msGroupCount%==4 goto choose4
-if %msGroupCount%==5 goto choose5
-if %msGroupCount%==6 goto choose6
-if %msGroupCount%==7 goto choose7
-if %msGroupCount%==8 goto choose8
-if %msGroupCount%==9 goto choose9
 choice /C 1234567890 /N /M "(1) (2) (3) (4) (5) (6) (7) (8) (9) (0)"
-goto chooseNow
-:choose9
-choice /C 123456789 /N /M "(1) (2) (3) (4) (5) (6) (7) (8) (9)"
-goto chooseNow
-:choose8
-choice /C 12345678 /N /M "(1) (2) (3) (4) (5) (6) (7) (8)"
-goto chooseNow
-:choose7
-choice /C 1234567 /N /M "(1) (2) (3) (4) (5) (6) (7)"
-goto chooseNow
-:choose6
-choice /C 123456 /N /M "(1) (2) (3) (4) (5) (6)"
-goto chooseNow
-:choose5
-choice /C 12345 /N /M "(1) (2) (3) (4) (5)"
-goto chooseNow
-:choose4
-choice /C 1234 /N /M "(1) (2) (3) (4)"
-goto chooseNow
-:choose3
-choice /C 123 /N /M "(1) (2) (3)"
-goto chooseNow
-:choose2
-choice /C 12 /N /M "(1) (2)"
-:chooseNow
 if errorlevel 10 set msNextGroup=%msGroup0% & set msNextFolder=_mods_%msGroup0%
 if errorlevel 9 set msNextGroup=%msGroup9% & set msNextFolder=_mods_%msGroup9%
 if errorlevel 8 set msNextGroup=%msGroup8% & set msNextFolder=_mods_%msGroup8%
@@ -228,10 +199,21 @@ if errorlevel 4 set msNextGroup=%msGroup4% & set msNextFolder=_mods_%msGroup4%
 if errorlevel 3 set msNextGroup=%msGroup3% & set msNextFolder=_mods_%msGroup3%
 if errorlevel 2 set msNextGroup=%msGroup2% & set msNextFolder=_mods_%msGroup2%
 if errorlevel 1 set msNextGroup=%msGroup1% & set msNextFolder=_mods_%msGroup1%
-goto goSwitch
+rem =============================================================================
+rem Check if unused Mod Group slot is selected
+rem =============================================================================
+if not %msNextGroup%==unused goto goSwitch
+echo %date% %time% - ModSwapSwitcher - Validation: Selected unused Mod Group: %msNextGroup%>> %msLog%
+cls
+echo -- ModSwap Switcher v%msVer% --
+echo.
+echo.
+echo You have selected an unused Mod Group.
+echo Please select again.
+goto redoNext
 :clearForNext
 cls
-echo -- ModSwap v%msVer% - Switcher --
+echo -- ModSwap Switcher v%msVer% --
 echo.
 echo.
 goto redoNext
@@ -245,7 +227,7 @@ echo.
 choice /C YN /N /M "(Y)es or (N)o"
 if errorlevel 2 echo %date% %time% - ModSwapSwitcher - Mod Group Selection aborted.>> %msLog% & goto clearForNext
 cls
-echo -- ModSwap v%msVer% - Switcher --
+echo -- ModSwap Switcher v%msVer% --
 rem =============================================================================
 rem Switch Mod Groups
 rem =============================================================================
@@ -271,9 +253,10 @@ echo.
 echo ModSwap Switcher will now close.
 echo.
 echo %date% %time% - ModSwapSwitcher - Switcher Completed>> %msLog%
-if %msQuick%==1  timeout 3 & goto quickExit
+if %msQuick%==1 goto quick02
 pause
-:quickExit
+:quick02
+if %msQuick%==1 timeout 4
 echo %date% %time% - ModSwapSwitcher - Switcher Closed E290>> %msLog% & exit
 rem #########
 rem Exit E290
@@ -281,7 +264,7 @@ rem #########
 :noData
 echo %date% %time% - ModSwapSwitcher - Validation: Data file not found>> %msLog%
 cls
-echo -- ModSwap v%msVer% - Switcher --
+echo -- ModSwap Switcher v%msVer% --
 echo.
 echo.
 echo ModSwap data file not found.
@@ -296,7 +279,7 @@ rem #########
 rem Exit E210
 rem #########
 :groupFolderMismatch
-echo %date% %time% - ModSwapSwitcher - Validation: %msGroupCount% Mod Groups; %msFolderCount% folders>> %msLog%
+echo %date% %time% - ModSwapSwitcher - Validation: %msFolderCount% folders found>> %msLog%
 echo.
 echo.
 echo One or more Mod Group folders were not found.
@@ -311,9 +294,6 @@ rem #########
 rem Exit E230
 rem #########
 :noGroup
-rem =============================================================================
-rem No Mod Groups defined
-rem =============================================================================
 echo %date% %time% - ModSwapSwitcher - Validation: %msGroupCount% Mod Groups defined>> %msLog%
 echo.
 echo No Mod Groups were found.
@@ -328,9 +308,6 @@ rem #########
 rem Exit E260
 rem #########
 :oneGroup
-rem =============================================================================
-rem Only one Mod Group defined
-rem =============================================================================
 echo %date% %time% - ModSwapBuilder - Validation: %msGroupCount% Mod Group defined>> %msLog%
 echo.
 echo Only one Mod Group was found.

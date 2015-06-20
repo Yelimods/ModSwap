@@ -2,7 +2,7 @@
 color 73
 rem      ########################################################################
 rem      #    The ModSwap Project for:  Farming Simulator by Giants Software    #
-rem      #         © 2014 Yelibam at www.fs-uk.com - yelimods@mail.com          #
+rem      #         © 2015 Yelibam at www.fs-uk.com - yelimods@mail.com          #
 rem      ########################################################################
 rem =============================================================================
 rem initialise variables and settings
@@ -17,30 +17,31 @@ set msLog=%msRoot%\ModSwapLog.dat
 set msData=%msRoot%\ModSwapData.dat
 set msSettings=%msRoot%\ModSwapSettings.dat
 cd %msParent%
+rem exit codes are E010 to E095
 if %msQuick%==1 goto quick01
 rem =============================================================================
 rem Introduction
 rem =============================================================================
-rem exit codes are E010 to E095
 cls
-echo -- ModSwap v%msVer% - Menu --
+echo -- ModSwap Menu v%msVer% --
 echo.
 echo.
 echo          ##########################################
 echo          #                                        #
 echo          #          The ModSwap Project           #
 echo          #                                        #
-echo          #       Copyright (c) 2014 Yelibam       #
+echo          #       Copyright (c) 2015 Yelibam       #
 echo          #    www.fs-uk.com - yelimods@mail.com   #
 echo          #                                        #
-echo          #       for Farming Simulator 2013       #
+echo          #    for Farming Simulator 2013 and 15   #
 echo          #               by Giants                #
 echo          #                                        #
 echo          ##########################################
 echo.
 echo There are several elements to ModSwap, and this is the place to start.
 echo.
-echo ModSwap Builder will enable you to create up to 10 separate Mod Groups.
+echo ModSwap Builder will enable you to create up to 20 separate Mod Groups.
+echo One for each farm that you want to play.
 echo You can then use ModSwap Switcher to switch between them with ease.
 echo.
 echo Please read the accompanying help file before continuing.
@@ -60,7 +61,7 @@ rem ============================================================================
 rem Initialise log file
 rem =============================================================================
 cls
-echo -- ModSwap v%msVer% - Menu --
+echo -- ModSwap Menu v%msVer% --
 echo.
 echo.
 echo ModSwap will create a log of the changes it makes.
@@ -80,7 +81,7 @@ set msArchiveTime=%msArchiveTime:~0,8%
 set msArchive=ModSwapLog_%msArchiveDate%_%msArchiveTime%.txt
 if exist %msLog% ren %msLog% %msArchive%
 echo %date% %time% - ModSwapMenu - New log file Started> %msLog%
-echo %date% %time% - ModSwapMenu - © 2014 Yelibam at www.fs-uk.com - yelimods@mail.com>> %msLog%
+echo %date% %time% - ModSwapMenu - © 2015 Yelibam at www.fs-uk.com - yelimods@mail.com>> %msLog%
 if exist %msRoot%\%msArchive% echo %date% %time% - ModSwapMenu - Old Log File Archived: %msArchive%>> %msLog%
 echo.
 echo New log file started: ModSwapLog.dat
@@ -96,10 +97,8 @@ rem Ready to start?
 rem =============================================================================
 :goSelect
 cls
-echo -- ModSwap v%msVer% - Menu --
+echo -- ModSwap Menu v%msVer% --
 echo.
-echo.
-echo -- Main Menu --
 echo.
 echo Please select from the choices below.
 echo.
@@ -108,6 +107,7 @@ echo  2 Run ModSwap Switcher
 echo  3 Settings
 echo  4 Exit
 echo.
+rem choice /C 1234 /N /M "(1) (2) (3) (4)"
 choice /C 1234 /N
 if errorlevel 4 echo %date% %time% - ModSwapMenu - Menu Closed E010>> %msLog% & exit
 if errorlevel 3 goto settings
@@ -122,24 +122,17 @@ rem ============================================================================
 :settings
 echo %date% %time% - ModSwapMenu - Settings Opened>> %msLog%
 cls
-echo -- ModSwap v%msVer% - Menu --
+echo -- ModSwap Menu v%msVer% --
 echo.
 echo.
-echo -- Settings Menu --
+echo Quick Mode will bypass the help and information screens throughout ModSwap.
+echo Use this only when you are familiar with the operation of ModSwap.
 echo.
-if %msQuick% equ 0 echo Quick Mode is Off.
-if %msQuick% equ 1 echo Quick Mode is On.
+echo Do you wish to use Quick Mode?
 echo.
-echo Please select from the choices below.
-echo.
-echo  1 Standard Mode: all screens shown
-echo  2 Quick Mode: bypass help and information screens throughout ModSwap
-echo.
-echo Use Quick Mode only when you are familiar with the operation of ModSwap.
-echo.
-choice /C 12 /N
-if errorlevel 2 set msQuick=1 & echo Quick mode is now On & echo %date% %time% - ModSwapMenu - Quick Mode switched On>> %msLog%
-if errorlevel 1 set msQuick=0 & echo Quick mode is now Off & echo %date% %time% - ModSwapMenu - Quick Mode switched Off>> %msLog%
+choice /C YN /N /M "(Y)es (N)o"
+if errorlevel 2 set msQuick=0 & echo Quick mode is now Off & echo %date% %time% - ModSwapMenu - Quick Mode switched Off>> %msLog%
+if errorlevel 1 set msQuick=1 & echo Quick mode is now On & echo %date% %time% - ModSwapMenu - Quick Mode switched On>> %msLog%
 (
 echo %msVer%
 echo %msQuick%
